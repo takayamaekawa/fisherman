@@ -1,7 +1,6 @@
 // app/components/HamburgerNavComponent.tsx (ステップA: ダミーsetLangテスト)
 import { useEffect, useState } from 'hono/jsx'; // useStateも使う可能性があるので入れておく
-// import type { Language } from '../islands/RootLayoutIsland'; // インポートしない
-type Language = 'ja' | 'ne' | 'en'; // ローカル定義
+import { Language } from '../types/common';
 
 type ProfileDataForNav = { name: string; };
 type HamburgerNavComponentProps = {

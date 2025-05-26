@@ -1,8 +1,8 @@
 // app/islands/RootLayoutIsland.tsx (ステップB: 実際のsetLangを渡す)
 import { useState, useEffect, PropsWithChildren } from 'hono/jsx';
 import HamburgerNav from '../islands/HamburgerNav';
+import { Language } from '../types/common';
 
-export type Language = 'ja' | 'ne' | 'en';
 type ProfileData = { name: string; title?: string; };
 type RootLayoutIslandProps = PropsWithChildren<{
   profile: ProfileData;

@@ -1,7 +1,7 @@
 import type { TaskInfo } from '../types/tasks';
 import { translate } from '../utils/i18n';
+import { Language } from '../types/common';
 // import { useLang } from '../hooks/useLang'; // TaskItemではpropsでlangを受け取るので不要な場合も
-import type { Language } from '../hooks/useLang'; // ★ Language 型をインポート
 // import RubyText from './RubyText'; // RubyText を使う場合はコメントアウトを外す
 
 // TaskItemPropsの型を明示的に定義（TaskInfoとlangプロパティを結合）
