@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+@import 'tailwindcss' source('../app');
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Kosugi Maru', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  padding-bottom: 2px;
+}
+
+a:hover {
+  border-bottom-color: green;
+}
+
+.no-underline {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
