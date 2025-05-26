@@ -1,0 +1,44 @@
+{
+  "staff": [
+    {
+      "id": "tanaka",
+      "name": "田中 太郎",
+      "position": {
+        "ja": "チーフ",
+        "ne": "प्रमुख",
+        "en": "Chief"
+      },
+      "specialty": {
+        "ja": "魚の目利き、仕入れ",
+        "ne": "माछा छनोट, खरिद",
+        "en": "Fish Expertise, Purchasing"
+      },
+      "message": {
+        "ja": "分からないことがあれば何でも聞いてください！",
+        "ne": "केहि नबुझेमा सोध्नुहोस्!",
+        "en": "Ask me anything if you don't understand!"
+      },
+      "image": "/images/tanaka.jpg"
+    },
+    {
+      "id": "gurung",
+      "name": "ラム・グルン",
+      "position": {
+        "ja": "アルバイト",
+        "ne": "पार्ट-टाइमर",
+        "en": "Part-timer"
+      },
+      "specialty": {
+        "ja": "パック詰め、品出し",
+        "ne": "प्याकिङ, प्रदर्शन",
+        "en": "Packing, Stocking"
+      },
+      "message": {
+        "ja": "一緒に頑張りましょう！",
+        "ne": "सँगै मिलेर काम गरौं!",
+        "en": "Let's work hard together!"
+      },
+      "image": "/images/gurung.jpg"
+    }
+  ]
+}

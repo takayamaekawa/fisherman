@@ -1,5 +1,7 @@
 /public/blog/
 /data/profile.json
+/data/staff.json
+/data/tasks.json
 wrangler.jsonc
 .wrangler/
 package-lock.json

@@ -1,0 +1,93 @@
+{
+  "tasks": [
+    {
+      "id": "aji_filleting",
+      "title": {
+        "ja": "アジの三枚おろし",
+        "ne": "आजीको तीन टुक्रा",
+        "en": "Horse Mackerel Filleting (3 pieces)"
+      },
+      "description": {
+        "ja": "新鮮な<ruby>アジ<rt>Aji</rt></ruby>を三枚におろす基本的な手順です。包丁の扱いに注意してください。",
+        "ne": "ताजा <ruby>आजी<rt>Aji</rt></ruby>लाई तीन टुक्रामा काट्ने आधारभूत प्रक्रिया। चक्कु प्रयोग गर्दा होसियार हुनुहोस्।",
+        "en": "Basic steps to fillet fresh <ruby>Aji<rt>Aji</rt></ruby> (Horse Mackerel). Be careful when handling the knife."
+      },
+      "steps": [
+        {
+          "ja": "頭を落とす。",
+          "ne": "टाउको काट्नुहोस्।",
+          "en": "Cut off the head."
+        },
+        {
+          "ja": "内臓を取り除く。",
+          "ne": "भित्री भाग हटाउनुहोस्।",
+          "en": "Remove the guts."
+        },
+        {
+          "ja": "背骨に沿って片身を切り離す。",
+          "ne": "ढाडको हड्डीको छेउमा एउटा भाग काट्नुहोस्।",
+          "en": "Cut one fillet along the spine."
+        },
+        {
+          "ja": "裏返してもう片身を切り離す。",
+          "ne": "पल्टाएर अर्को भाग काट्नुहोस्।",
+          "en": "Turn over and cut the other fillet."
+        },
+        {
+          "ja": "腹骨をすき取る。",
+          "ne": "पेटको हड्डी हटाउनुहोस्।",
+          "en": "Trim the belly bones."
+        }
+      ],
+      "points": [
+        {
+          "ja": "鮮度が命です。手早く作業しましょう。",
+          "ne": "ताजगी महत्त्वपूर्ण छ। छिटो काम गर्नुहोस्।",
+          "en": "Freshness is key. Work quickly."
+        },
+        {
+          "ja": "骨に注意して、怪我をしないように。",
+          "ne": "हड्डीमा ध्यान दिनुहोस्, चोट नलागोस्।",
+          "en": "Be careful with bones to avoid injury."
+        }
+      ],
+      "image": "/images/aji_fillet.jpg"
+    },
+    {
+      "id": "sashimi_prep",
+      "title": {
+        "ja": "刺身の盛り付け",
+        "ne": "साशिमीको तयारी",
+        "en": "Sashimi Plating"
+      },
+      "description": {
+        "ja": "<ruby>マグロ<rt>Maguro</rt></ruby>や<ruby>サーモン<rt>Salmon</rt></ruby>などの刺身を美しく盛り付ける方法。",
+        "ne": "<ruby>मागुरा<rt>Maguro</rt></ruby> र <ruby>साल्मन<rt>Salmon</rt></ruby> जस्ता साशिमीलाई सुन्दर ढंगले सजाउने तरिका।",
+        "en": "How to beautifully arrange sashimi such as <ruby>Maguro<rt>Maguro</rt></ruby> (Tuna) and <ruby>Salmon<rt>Salmon</rt></ruby>."
+      },
+      "steps": [
+        {
+          "ja": "ツマを皿に敷く。",
+          "ne": "प्लेटमा सुमा राख्नुहोस्।",
+          "en": "Place the 'tsuma' (garnish) on the plate."
+        },
+        {
+          "ja": "刺身を適切な厚さに切る。",
+          "ne": "साशिमीलाई उपयुक्त मोटाइमा काट्नुहोस्।",
+          "en": "Slice the sashimi to the appropriate thickness."
+        },
+        {
+          "ja": "彩りよく配置する。",
+          "ne": "रंगीन ढंगले सजाउनुहोस्।",
+          "en": "Arrange colorfully."
+        },
+        {
+          "ja": "ワサビと醤油を添える。",
+          "ne": "वासाबी र सोयु सससँगै राख्नुहोस्।",
+          "en": "Serve with wasabi and soy sauce."
+        }
+      ],
+      "image": "/images/sashimi.jpg"
+    }
+  ]
+}

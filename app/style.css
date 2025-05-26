@@ -8,7 +8,8 @@ html {
 }
 
 body {
-  font-family: 'Kosugi Maru', sans-serif;
+  /* font-family: 'Kosugi Maru', sans-serif; */
+  font-family: 'Noto Sans Devanagari'; /* ネパール語用に追加 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
