@@ -1,4 +1,5 @@
 import { usePageLang } from '../hooks/pageLang';
+import { renderName } from './Renders';
 import { translate } from '../utils/i18n';
 import { generalMessages } from '../locales/translations';
 import type { ContactPerson } from '../types/contact';
@@ -11,7 +12,7 @@ type ContactPersonItemProps = ContactPerson & {
 function ContactPersonItem({ name, position, specialty, way, lang }: ContactPersonItemProps) {
   return (
     <div class="bg-gray-700 p-6 rounded-lg shadow-lg mb-6 text-left">
-      <h3 class="text-2xl font-semibold text-gray-100">{name}</h3>
+      <h3 class="text-2xl font-semibold text-gray-100">{renderName(name, lang)}</h3>
       <p class="text-gray-400 mt-1">{translate(position, lang)}</p>
       <p class="text-gray-300 mt-2">{translate(specialty, lang)}</p>
 

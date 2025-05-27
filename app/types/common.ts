@@ -6,3 +6,5 @@ export type LocalizedString = {
 };
 
 export type Language = 'ja' | 'ne' | 'en';
+
+export type NameRuby = string | { text: string; ruby: string } | LocalizedString;
