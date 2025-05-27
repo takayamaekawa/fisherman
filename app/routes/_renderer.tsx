@@ -36,29 +36,6 @@ export default jsxRenderer(({ children }, c: Context) => {
         <Link href="/app/style.css" rel="stylesheet" />
         <Script src="/app/client.ts" async />
       </head>
-      {/* <body class="font-sans antialiased bg-gray-900 text-gray-100"> */}
-      {/* <main class="max-w-4xl mx-auto p-4 bg-gray-800 shadow-md rounded-md flex-grow"> */}
-      {/* <body class="font-sans antialiased bg-[url('/images/backgrounds/fish_background.svg')] bg-cover bg-center text-gray-100"> */}
-
-      {/* 画像のぼかしはいい感じだが、footer以下にも画像が展開されてしまう */}
-      {/* <body class="font-sans antialiased bg-gray-900 text-gray-100"> */}
-      {/* <main class="max-w-4xl mx-auto p-4 bg-white/10 backdrop-blur-md shadow-md rounded-md flex-grow border border-white/20"> */}
-      {/* <body class="font-sans antialiased bg-[url('/images/backgrounds/kkrn_icon_sakana_1.png')] bg-repeat bg-[length:100px_100px] text-gray-100"> */}
-      {/* <main class="max-w-4xl mx-auto p-4 bg-white/10 backdrop-blur-md shadow-md rounded-md flex-grow border border-white/20"> */}
-      {/*
-      <body class="font-sans antialiased text-gray-100 bg-gray-900">
-        <main class="relative overflow-hidden rounded-md shadow-lg mx-auto max-w-4xl p-4">
-          <div class="relative z-10 backdrop-blur-md bg-white/10 p-6 rounded-lg border border-white/20">
-            <RootLayoutIsland
-              profile={profileData} // profileData全体を渡すか、必要な部分だけにするか検討
-              initialLang={ssrInitialLang}
-            >
-              {children}
-            </RootLayoutIsland>
-          </div>
-        </main>
-      </body>
-      */}
       <body class="font-sans antialiased text-gray-100 bg-gray-900">
         <main class="relative overflow-hidden rounded-md shadow-lg mx-auto max-w-4xl p-4">
           <div class="relative z-10 backdrop-blur-md bg-white/10 p-6 rounded-lg border border-white/20">
