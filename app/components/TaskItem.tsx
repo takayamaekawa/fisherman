@@ -1,15 +1,13 @@
-import type { TaskInfo } from '../types/tasks';
+// app/components/TaskItem.tsx
+import type { TaskInfo, ProcedureItem, StepItem, ImageItem } from '../types/tasks'; // ★ 型をインポート
 import { translate } from '../utils/i18n';
-import { Language } from '../types/common';
-// import { useLang } from '../hooks/useLang'; // TaskItemではpropsでlangを受け取るので不要な場合も
-// import RubyText from './RubyText'; // RubyText を使う場合はコメントアウトを外す
+import type { Language } from '../types/common'; // Language型をインポート
 
-// TaskItemPropsの型を明示的に定義（TaskInfoとlangプロパティを結合）
 type TaskItemProps = TaskInfo & {
   lang: Language;
 };
 
-function TaskItem({ id, title, description, steps, points, image, lang: itemLang }: TaskItemProps) {
+function TaskItem({ id, title, description, procedure, points, image, lang: itemLang }: TaskItemProps) { // ★ steps を procedure に変更
   console.log(`[TaskItem: ${translate(title, itemLang)}] Rendered. Current lang:`, itemLang);
 
   const translatedDescription = { __html: translate(description, itemLang) };
@@ -20,14 +18,42 @@ function TaskItem({ id, title, description, steps, points, image, lang: itemLang
         <a href={`#${id}`} class="mr-2 text-xl text-gray-500 hover:text-blue-400 no-underline">🔗</a>
         <span>{translate(title, itemLang)}</span>
       </h3>
+      {/* タスク全体のメイン画像 */}
       {image && <img src={image} alt={translate(title, itemLang)} class="my-4 rounded-md max-w-sm mx-auto" />}
       <p class="mt-2 text-gray-300" dangerouslySetInnerHTML={translatedDescription}></p>
+
       <h4 class="text-lg font-medium mt-4">手順:</h4>
-      <ul class="list-decimal list-inside text-gray-400 ml-4 space-y-1">
-        {steps.map((step, index) => (
-          <li key={`${id}-step-${index}`} dangerouslySetInnerHTML={{ __html: translate(step, itemLang) }}></li>
-        ))}
-      </ul>
+      {/* ★ procedure 配列をマップして表示 */}
+      <div class="ml-4 space-y-2"> {/* リスト全体のコンテナ */}
+        {procedure.map((item: ProcedureItem, index: number) => {
+          if (item.type === 'step') {
+            // 型ガードを使って item が StepItem であることを TypeScript に伝える
+            const stepItem = item as StepItem;
+            return (
+              <div key={`${id}-step-${index}`} class="flex items-start">
+                <span class="mr-2 text-gray-400">{index + 1}.</span> {/* 番号付け */}
+                <div dangerouslySetInnerHTML={{ __html: translate(stepItem.text, itemLang) }}></div>
+              </div>
+            );
+          } else if (item.type === 'image') {
+            // 型ガードを使って item が ImageItem であることを TypeScript に伝える
+            const imageItem = item as ImageItem;
+            return (
+              <figure key={`${id}-image-${index}`} class="my-4 text-center">
+                <img
+                  src={imageItem.path}
+                  alt={translate(imageItem.alt, itemLang)}
+                  class="rounded-md max-w-full sm:max-w-md mx-auto shadow-lg"
+                />
+                {/* 必要であればキャプションなども追加可能 */}
+                {/* <figcaption class="text-sm text-gray-500 mt-1">{translate(imageItem.alt, itemLang)}</figcaption> */}
+              </figure>
+            );
+          }
+          return null; // 未知のtypeの場合は何も表示しない
+        })}
+      </div>
+
       {points && points.length > 0 && (
         <>
           <h4 class="text-lg font-medium mt-4">ポイント:</h4>

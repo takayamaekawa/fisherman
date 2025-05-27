@@ -1,20 +1,18 @@
-import { useLang } from '../hooks/useLang';
-import { translate } from '../utils/i18n';
+import { usePageLang } from '../hooks/pageLang'; // ★ 新しいフックをインポート
 import type { TaskInfo } from '../types/tasks';
 import TaskItem from '../components/TaskItem';
 
-// TaskList アイランドコンポーネント
 const TaskList = ({ tasks }: { tasks: TaskInfo[] }) => {
-  const { lang } = useLang();
-  console.log('[TaskList] Rendered. Current lang:', lang);
+  const { lang } = usePageLang(); // ★ usePageLang から lang を取得
+  // console.log('[TaskList] Rendered. Current lang from usePageLang:', lang);
 
   return (
     <>
       {tasks.map((task) => (
         <TaskItem
-          key={`${task.id}-${lang}`} // lang を含めてキーをユニークに
+          key={`${task.id}-${lang}`}
           {...task}
-          lang={lang} // ★ lang プロパティを TaskItem に渡す
+          lang={lang} // TaskItem に lang を渡す
         />
       ))}
     </>

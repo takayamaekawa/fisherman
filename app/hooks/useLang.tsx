@@ -16,21 +16,18 @@ export const LangProvider = ({ children }: PropsWithChildren) => {
   const [lang, setLangState] = useState<Language>('ja');
 
   useEffect(() => {
-    console.log(`[LangProvider Client Effect] lang state is now: ${lang}`);
+    // console.log(`[LangProvider Client Effect] lang state is now: ${lang}`);
   }, [lang]);
 
   const updateLang = useCallback((newLang: Language) => {
-    console.log(`[LangProvider] updateLang CALLED. Attempting to change from "<span class="math-inline">\{lang\}" to "</span>{newLang}"`);
+    // console.log(`[LangProvider] updateLang CALLED. Attempting to change from "<span class="math-inline">\{lang\}" to "</span>{newLang}"`);
     if (newLang !== lang) {
       setLangState(newLang);
-      console.log(`[LangProvider] Lang SET to "${newLang}". State update initiated.`);
+      // console.log(`[LangProvider] Lang SET to "${newLang}". State update initiated.`);
     } else {
-      console.log(`[LangProvider] Language already "${newLang}". No state change.`);
+      // console.log(`[LangProvider] Language already "${newLang}". No state change.`);
     }
   }, [lang]); // lang が変更されたら updateLang も再生成 (重要)
-
-  // このログはデバッグが完了したら削除しても良いでしょう
-  console.log('[LangProvider Render] Rendering. Current lang state:', lang);
 
   // contextに渡すvalueオブジェクトをuseMemoでメモ化
   const contextValue = useMemo(() => ({
@@ -52,7 +49,7 @@ export const useLang = () => {
   if (context.setLang.toString().includes('console.warn')) { // ダミー関数かどうかを簡易的にチェック
     console.error(`[useLang Hook ERROR] useContext is returning the DEFAULT context value! This means the Island is not seeing the LangProvider correctly. Lang: ${context.lang}, setLang type: ${typeof context.setLang}`);
   } else {
-    console.log(`[useLang Hook OK] useContext returned a value from a Provider. Lang: ${context.lang}, typeof setLang: ${typeof context.setLang}`);
+    // console.log(`[useLang Hook OK] useContext returned a value from a Provider. Lang: ${context.lang}, typeof setLang: ${typeof context.setLang}`);
   }
 
   if (!context) { // 通常この分岐には入らないはず

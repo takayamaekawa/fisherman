@@ -3,30 +3,30 @@ import { useEffect, useState } from 'hono/jsx'; // useStateも使う可能性が
 import { Language } from '../types/common';
 
 type ProfileDataForNav = { name: string; };
-type HamburgerNavComponentProps = {
+type HamburgerNavProps = {
   profile: ProfileDataForNav;
   lang: Language;
   setLang: (newLang: Language) => void; // ★ setLang prop を受け取る
 };
 
-const HamburgerNavComponent = ({ profile, lang, setLang }: HamburgerNavComponentProps) => {
+const HamburgerNav = ({ profile, lang, setLang }: HamburgerNavProps) => {
   // ハンバーガーメニューの開閉状態もこのコンポーネントで持つことにする
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    console.log(`[HamburgerNavComponent Effect - Step A] Props/State updated. lang: ${lang}, isOpen: ${isOpen}`);
+    // console.log(`[HamburgerNavComponent Effect - Step A] Props/State updated. lang: ${lang}, isOpen: ${isOpen}`);
   }, [lang, isOpen, profile]); // profileも依存配列に含める
 
-  console.log(`[HamburgerNavComponent Render - Step A] Rendering. lang: ${lang}, isOpen: ${isOpen}, profile: ${profile.name}`);
+  // console.log(`[HamburgerNavComponent Render - Step A] Rendering. lang: ${lang}, isOpen: ${isOpen}, profile: ${profile.name}`);
 
   const toggleMenu = () => {
-    console.log('[HamburgerNavComponent - Step A] toggleMenu called.');
+    // console.log('[HamburgerNavComponent - Step A] toggleMenu called.');
     setIsOpen(!isOpen);
   };
 
   const handleLangChangeInternal = (newLang: Language) => {
-    console.log(`[HamburgerNavComponent - Step A] handleLangChangeInternal called with ${newLang}.`);
-    alert(`[HamburgerNavComponent - Step A] Language button ${newLang} clicked. Calling props.setLang now.`);
+    // console.log(`[HamburgerNavComponent - Step A] handleLangChangeInternal called with ${newLang}.`);
+    // alert(`[HamburgerNavComponent - Step A] Language button ${newLang} clicked. Calling props.setLang now.`); // デバッグ用
     setLang(newLang); // propsで受け取った (この段階ではダミーの) 関数を呼び出す
     setIsOpen(false); // 言語選択後にメニューを閉じる
   };
@@ -60,8 +60,8 @@ const HamburgerNavComponent = ({ profile, lang, setLang }: HamburgerNavComponent
           <a href="/contact" class="text-gray-300 hover:text-blue-500">CONTACT</a>
           <div class="flex space-x-2">
             <button onClick={() => handleLangChangeInternal('ja')} class={`px-2 py-1 rounded ${lang === 'ja' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>JA</button>
-            <button onClick={() => handleLangChangeInternal('ne')} class={`px-2 py-1 rounded ${lang === 'ne' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>NE</button>
             <button onClick={() => handleLangChangeInternal('en')} class={`px-2 py-1 rounded ${lang === 'en' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>EN</button>
+            <button onClick={() => handleLangChangeInternal('ne')} class={`px-2 py-1 rounded ${lang === 'ne' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>NE</button>
           </div>
         </div>
 
@@ -74,8 +74,8 @@ const HamburgerNavComponent = ({ profile, lang, setLang }: HamburgerNavComponent
               <a href="/contact" class="text-gray-300 hover:text-blue-500 py-2" onClick={() => setIsOpen(false)}>CONTACT</a>
               <div class="flex space-x-2 pt-4">
                 <button onClick={() => handleLangChangeInternal('ja')} class={`px-3 py-1 rounded ${lang === 'ja' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>JA</button>
-                <button onClick={() => handleLangChangeInternal('ne')} class={`px-3 py-1 rounded ${lang === 'ne' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>NE</button>
                 <button onClick={() => handleLangChangeInternal('en')} class={`px-3 py-1 rounded ${lang === 'en' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>EN</button>
+                <button onClick={() => handleLangChangeInternal('ne')} class={`px-3 py-1 rounded ${lang === 'ne' ? 'bg-blue-500 text-white' : 'text-gray-300 hover:text-white'}`}>NE</button>
               </div>
             </div>
           </div>
@@ -84,4 +84,4 @@ const HamburgerNavComponent = ({ profile, lang, setLang }: HamburgerNavComponent
     </nav>
   );
 };
-export default HamburgerNavComponent;
+export default HamburgerNav;

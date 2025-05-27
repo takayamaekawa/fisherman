@@ -1,5 +1,6 @@
-import type { Language } from '../hooks/useLang'; // Language は useLang から
-import type { LocalizedString } from '../types/tasks'; // LocalizedString は types/tasks から
+import type { Language } from '../types/common';
+import type { LocalizedString } from '../types/common'; // LocalizedString は types/tasks から
+import { fishDictionary } from '../locales/translations'; // ★ JSONからロードされたfishDictionaryをインポート
 
 /**
  * LocalizedString オブジェクトまたは文字列から、指定された言語のテキストを返します。
@@ -27,14 +28,6 @@ export function translateWithHtml(data: LocalizedString | string | undefined, la
   // TODO: HTMLタグのプレースホルダー処理を実装する
   return translate(data, lang);
 }
-
-
-// 魚の名前辞書 (例)
-const fishDictionary: { [key: string]: LocalizedString } = {
-  "アジ": { "ja": "アジ", "ne": "आजी", "en": "Horse Mackerel" },
-  "マグロ": { "ja": "マグロ", "ne": "मागुरा", "en": "Tuna" },
-  "サーモン": { "ja": "サーモン", "ne": "साल्मन", "en": "Salmon" },
-};
 
 /**
  * テキスト内の魚の名前にルビを振る関数（日本語のみ対象）

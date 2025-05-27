@@ -16,6 +16,7 @@
     ],
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
+    "esModuleInterop": true,
     "resolveJsonModule": true
   },
   "include": [

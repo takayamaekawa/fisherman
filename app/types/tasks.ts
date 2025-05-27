@@ -1,19 +1,29 @@
-// 多言語テキストの型
-export type LocalizedString = {
-  ja: string; // 日本語
-  ne: string; // ネパール語
-  en: string; // 英語
+import { LocalizedString } from "./common";
+
+// ★ 手順の各アイテムの型を定義
+export type StepItem = {
+  type: 'step';
+  text: LocalizedString; // テキストによる手順
 };
 
-// 業務内容アイテムの型
+export type ImageItem = {
+  type: 'image';
+  path: string;          // 画像のパス
+  alt: LocalizedString;  // 画像のaltテキスト (翻訳可能)
+};
+
+// ProcedureItem は StepItem または ImageItem のどちらか
+export type ProcedureItem = StepItem | ImageItem;
+
+// 業務内容アイテムの型を更新
 export type TaskInfo = {
-  id: string; // 識別子 (URL用など)
-  title: LocalizedString; // 業務タイトル
-  description: LocalizedString; // 業務内容の説明
-  steps: LocalizedString[]; // 手順 (箇条書き)
-  points?: LocalizedString[]; // 注意点など (任意)
-  image?: string; // 関連画像のパス (任意)
-  video?: string; // 関連動画のリンク (任意)
+  id: string;
+  title: LocalizedString;
+  description: LocalizedString;
+  procedure: ProcedureItem[]; // ★ "steps" から "procedure" に変更し、型を更新
+  points?: LocalizedString[];
+  image?: string; // タスク全体のメイン画像 (これは残しても良い)
+  video?: string;
 };
 
 // 業務内容データ全体の型

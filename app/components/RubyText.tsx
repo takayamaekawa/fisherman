@@ -1,10 +1,6 @@
-// 例: RubyText コンポーネント (簡易版)
-const fishDictionary = {
-  "アジ": "Horse Mackerel",
-  "サバ": "Mackerel",
-  // ... 他の魚
-};
+import { fishDictionary } from '../locales/translations';
 
+// 例: RubyText コンポーネント (簡易版)
 function RubyText({ text, lang }: { text: string; lang: string }) {
   if (lang !== 'ja') {
     return <>{text}</>; // 日本語以外はそのまま表示
