@@ -8,7 +8,7 @@ type TaskItemProps = TaskInfo & {
 };
 
 function TaskItem({ id, title, description, procedure, points, image, lang: itemLang }: TaskItemProps) {
-  console.log(`[TaskItem: ${translate(title, itemLang)}] Rendered. Current lang:`, itemLang);
+  // console.log(`[TaskItem: ${translate(title, itemLang)}] Rendered. Current lang:`, itemLang);
 
   const translatedDescription = { __html: translate(description, itemLang) };
 
