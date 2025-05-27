@@ -2,7 +2,10 @@
   "staff": [
     {
       "id": "tanaka",
-      "name": "田中 太郎",
+      "name": {
+        "text": "田中 太郎",
+        "ruby": "Tanaka Taro"
+      },
       "position": {
         "ja": "チーフ",
         "ne": "प्रमुख",
@@ -18,11 +21,15 @@
         "ne": "केहि नबुझेमा सोध्नुहोस्!",
         "en": "Ask me anything if you don't understand!"
       },
-      "image": "/images/tanaka.jpg"
+      "image": "/images/tanaka.png"
     },
     {
       "id": "gurung",
-      "name": "ラム・グルン",
+      "name": {
+        "ja": "ラム・グルン",
+        "ne": "राम गुरुङ",
+        "en": "Ram Gurung"
+      },
       "position": {
         "ja": "アルバイト",
         "ne": "पार्ट-टाइमर",
@@ -38,7 +45,7 @@
         "ne": "सँगै मिलेर काम गरौं!",
         "en": "Let's work hard together!"
       },
-      "image": "/images/gurung.jpg"
+      "image": "/images/gurung.png"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "contact": [
+    {
+      "name": "",
+      "position": {
+        "ja": "",
+        "ne": "",
+        "en": ""
+      },
+      "specialty": {
+        "ja": "",
+        "ne": "",
+        "en": ""
+      },
+      "way": {
+        "tel": "",
+        "email": ""
+      }
+    }
+  ]
+}

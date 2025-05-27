@@ -1,7 +1,6 @@
 {
   "name": "",
   "title": "",
-  "comment": "",
   "og": {
     "title": "",
     "description": "",
@@ -14,7 +13,5 @@
       "url": ""
     },
   },
-  "contact": {
-    "email": ""
-  }
+  "copyrighter": ""
 }
