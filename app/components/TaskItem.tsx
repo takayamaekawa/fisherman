@@ -1,5 +1,6 @@
 import type { TaskInfo, ProcedureItem, StepItem, ImageItem } from '../types/tasks';
 import { translate } from '../utils/i18n';
+import { generalMessages } from '../locales/translations';
 import type { Language } from '../types/common';
 
 type TaskItemProps = TaskInfo & {
@@ -21,7 +22,7 @@ function TaskItem({ id, title, description, procedure, points, image, lang: item
       {image && <img src={image} alt={translate(title, itemLang)} class="my-4 rounded-md max-w-sm mx-auto" />}
       <p class="mt-2 text-gray-300" dangerouslySetInnerHTML={translatedDescription}></p>
 
-      <h4 class="text-lg font-medium mt-4">手順:</h4>
+      <h4 class="text-lg font-medium mt-4">{translate(generalMessages.taskItemProcedureLabel, itemLang)}:</h4>
       {/* ★ procedure 配列をマップして表示 */}
       <div class="ml-4 space-y-2">
         {procedure.map((item: ProcedureItem, index: number) => {
@@ -55,7 +56,7 @@ function TaskItem({ id, title, description, procedure, points, image, lang: item
 
       {points && points.length > 0 && (
         <>
-          <h4 class="text-lg font-medium mt-4">ポイント:</h4>
+          <h4 class="text-lg font-medium mt-4">{translate(generalMessages.taskItemPointLabel, itemLang)}:</h4>
           <ul class="list-disc list-inside text-gray-400 ml-4 space-y-1">
             {points.map((point, index) => (
               <li key={`${id}-point-${index}`} dangerouslySetInnerHTML={{ __html: translate(point, itemLang) }}></li>

@@ -79,5 +79,15 @@ export const generalMessages: Record<string, LocalizedString> = {
     "ja": "目次",
     "en": "Table of Contents",
     "ne": "विषयसूची"
+  },
+  "taskItemProcedureLabel": {
+    "ja": "手順",
+    "en": "Procedure",
+    "ne": "प्रक्रिया"
+  },
+  "taskItemPointLabel": {
+    "ja": "ポイント",
+    "en": "Points",
+    "ne": "बिन्दु"
   }
 };
