@@ -1,10 +1,9 @@
 import { usePageLang } from '../hooks/pageLang';
 import { translate } from '../utils/i18n';
-import { generalMessages } from '../locales/translations'; // TEL/Emailラベル用
+import { generalMessages } from '../locales/translations';
 import type { ContactPerson } from '../types/contact';
 import type { Language } from '../types/common';
 
-// ContactPersonItemコンポーネント
 type ContactPersonItemProps = ContactPerson & {
   lang: Language;
 };
@@ -48,7 +47,6 @@ const ContactPageContent = ({ contactList }: ContactPageContentProps) => {
   // console.log('[ContactPageContent Island] Rendered. Current lang:', lang);
 
   return (
-    // ヘッダーはCommonHeaderが担当するので、ここでは section のみ
     <section class="mt-12 space-y-8">
       {contactList.map((person, index) => (
         <ContactPersonItem key={index} {...person} lang={lang} />

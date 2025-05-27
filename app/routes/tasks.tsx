@@ -1,11 +1,10 @@
-// app/routes/tasks.tsx
 import { createRoute } from 'honox/factory';
 import tasksData from '../../data/tasks.json';
 import TaskList from '../islands/TaskList';
 import CommonHeader from '../islands/CommonHeader';
-import TableOfContents from '../islands/TableOfContents'; // ★ TableOfContents Islandをインポート
-import type { TaskInfo } from '../types/tasks';           // ★ TaskInfo型をインポート (型安全のため)
-import { generalMessages } from '../locales/translations'; // CommonHeaderで使わなくなった場合は不要
+import TableOfContents from '../islands/TableOfContents';
+import type { TaskInfo } from '../types/tasks';
+import { generalMessages } from '../locales/translations';
 
 // tasksData.tasks が TaskInfo[] 型であることを明示
 const typedTasksData = tasksData.tasks as TaskInfo[];

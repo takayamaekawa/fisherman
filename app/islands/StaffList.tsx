@@ -1,8 +1,8 @@
 import { usePageLang } from '../hooks/pageLang';
 import type { Language } from '../types/common';
-import type { StaffMember, StaffName } from '../types/staff'; // 作成した型をインポート
+import type { StaffMember, StaffName } from '../types/staff';
 import { translate } from '../utils/i18n';
-import type { LocalizedString } from '../types/common'; // 再利用
+import type { LocalizedString } from '../types/common';
 import { generalMessages } from '../locales/translations';
 
 interface StaffMemberUpdated extends Omit<StaffMember, 'name'> { // Omitを使ってnameを上書き
@@ -14,7 +14,7 @@ type StaffItemPropsUpdated = StaffMemberUpdated & {
 };
 
 
-function StaffItem({ name, position, specialty, message, image, lang }: StaffItemPropsUpdated) { // ★ 型を変更
+function StaffItem({ name, position, specialty, message, image, lang }: StaffItemPropsUpdated) {
 
   const renderName = () => {
     if (typeof name === 'string') {
@@ -34,7 +34,7 @@ function StaffItem({ name, position, specialty, message, image, lang }: StaffIte
     <div class="bg-gray-700 p-6 rounded-lg shadow-lg flex items-center space-x-4">
       {image && <img src={image} alt={typeof name === 'string' ? name : ('text' in name ? name.text : name.ja)} class="w-20 h-20 rounded-full object-cover" />}
       <div class="flex-1">
-        <h3 class="text-xl font-semibold">{renderName()}</h3> {/* ★ renderName()を使用 */}
+        <h3 class="text-xl font-semibold">{renderName()}</h3>
         <p class="text-gray-400">{translate(position, lang)}</p>
         <p class="mt-2 text-gray-300"><strong>{translate(generalMessages.staffSpecialtyLabel, lang)}</strong> {translate(specialty, lang)}</p>
         <p class="mt-1 text-gray-300 italic">"{translate(message, lang)}"</p>
@@ -48,7 +48,7 @@ type StaffListPropsUpdated = {
   staffMembers: StaffMemberUpdated[];
 };
 
-const StaffList = ({ staffMembers }: StaffListPropsUpdated) => { // ★ 型を変更
+const StaffList = ({ staffMembers }: StaffListPropsUpdated) => {
   const { lang } = usePageLang();
   // ...
   return (

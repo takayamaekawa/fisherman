@@ -1,9 +1,8 @@
 import { fishDictionary } from '../locales/translations';
 
-// 例: RubyText コンポーネント (簡易版)
 function RubyText({ text, lang }: { text: string; lang: string }) {
   if (lang !== 'ja') {
-    return <>{text}</>; // 日本語以外はそのまま表示
+    return <>{text}</>;
   }
 
   // 簡易的な実装: 辞書にある魚の名前を探してルビを振る

@@ -1,7 +1,7 @@
 import { usePageLang } from '../hooks/pageLang';
 import { translate } from '../utils/i18n';
-import type { TaskInfo } from '../types/tasks'; // TaskInfo型をインポート
-import { generalMessages } from '../locales/translations'; // 翻訳データをインポート
+import type { TaskInfo } from '../types/tasks';
+import { generalMessages } from '../locales/translations';
 
 // TableOfContentsコンポーネントが必要とするTaskInfoのプロパティを定義
 type TocTaskItem = Pick<TaskInfo, 'id' | 'title'>;
@@ -19,7 +19,6 @@ const TableOfContents = ({ tasks }: TableOfContentsProps) => {
   }
 
   return (
-    // 目次全体のスタイル調整はお好みで
     <nav class="mb-10 p-6 bg-gray-700/50 border border-gray-600 rounded-lg shadow-md">
       <h2 class="text-2xl font-semibold mb-4 text-gray-100">
         {translate(generalMessages.tableOfContentsTitle, lang)}

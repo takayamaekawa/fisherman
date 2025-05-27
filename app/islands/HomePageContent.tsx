@@ -1,8 +1,7 @@
 import { usePageLang } from '../hooks/pageLang';
 import { translate } from '../utils/i18n';
-import { generalMessages } from '../locales/translations'; // 翻訳データをインポート
-// profile.json のデータは _renderer.tsx -> RootLayoutIsland で管理されているので、
-// ここで直接 profile.json をインポートする必要はありません。
+import { generalMessages } from '../locales/translations';
+
 // もし RootLayoutIsland から profile データの一部を props で渡すなら型定義が必要。
 
 const HomePageContent = () => {

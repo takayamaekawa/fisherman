@@ -1,13 +1,12 @@
-// app/components/TaskItem.tsx
-import type { TaskInfo, ProcedureItem, StepItem, ImageItem } from '../types/tasks'; // ★ 型をインポート
+import type { TaskInfo, ProcedureItem, StepItem, ImageItem } from '../types/tasks';
 import { translate } from '../utils/i18n';
-import type { Language } from '../types/common'; // Language型をインポート
+import type { Language } from '../types/common';
 
 type TaskItemProps = TaskInfo & {
   lang: Language;
 };
 
-function TaskItem({ id, title, description, procedure, points, image, lang: itemLang }: TaskItemProps) { // ★ steps を procedure に変更
+function TaskItem({ id, title, description, procedure, points, image, lang: itemLang }: TaskItemProps) {
   console.log(`[TaskItem: ${translate(title, itemLang)}] Rendered. Current lang:`, itemLang);
 
   const translatedDescription = { __html: translate(description, itemLang) };
@@ -24,7 +23,7 @@ function TaskItem({ id, title, description, procedure, points, image, lang: item
 
       <h4 class="text-lg font-medium mt-4">手順:</h4>
       {/* ★ procedure 配列をマップして表示 */}
-      <div class="ml-4 space-y-2"> {/* リスト全体のコンテナ */}
+      <div class="ml-4 space-y-2">
         {procedure.map((item: ProcedureItem, index: number) => {
           if (item.type === 'step') {
             // 型ガードを使って item が StepItem であることを TypeScript に伝える

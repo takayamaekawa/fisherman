@@ -1,8 +1,7 @@
-// app/routes/contact.tsx
 import { createRoute } from 'honox/factory';
 import ContactPageContent from '../islands/ContactPageContent';
-import CommonHeader from '../islands/CommonHeader';         // ★ 共通ヘッダー
-import { generalMessages } from '../locales/translations'; // ★ 翻訳データ
+import CommonHeader from '../islands/CommonHeader';
+import { generalMessages } from '../locales/translations';
 import contactDataJson from '../../data/contact.json';
 import type { ContactData } from '../types/contact';
 

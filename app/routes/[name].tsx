@@ -1,4 +1,3 @@
-// app/routes/[name].tsx
 import { createRoute } from 'honox/factory';
 
 export default createRoute(async (c) => {

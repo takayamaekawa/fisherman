@@ -1,7 +1,7 @@
 import { useState, useEffect, PropsWithChildren } from 'hono/jsx';
-import HamburgerNav from './HamburgerNav'; // HamburgerNav Islandをインポート
+import HamburgerNav from './HamburgerNav';
 import { Language } from '../types/common';
-import { PageLangContextProvider } from '../hooks/pageLang'; // ★ 新しいProviderをインポート
+import { PageLangContextProvider } from '../hooks/pageLang';
 
 type ProfileData = {
   name: string;

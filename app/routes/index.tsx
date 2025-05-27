@@ -1,7 +1,7 @@
 import { createRoute } from 'honox/factory';
-import HomePageContent from '../islands/HomePageContent'; // ★ HomePageContent Islandをインポート
-import CommonHeader from '../islands/CommonHeader';      // ★ 共通ヘッダーIsland
-import { generalMessages } from '../locales/translations'; // ★ 翻訳データをインポート
+import HomePageContent from '../islands/HomePageContent';
+import CommonHeader from '../islands/CommonHeader';
+import { generalMessages } from '../locales/translations';
 
 export default createRoute(async (c) => {
   // ページタイトルは RootLayoutIsland または _renderer.tsx で設定
@@ -12,6 +12,6 @@ export default createRoute(async (c) => {
         titleContent={generalMessages.homeTitle}
         descriptionContent={generalMessages.homeDescription}
       />
-      <HomePageContent /> {/* HomePageContentはヘッダー以外のコンテンツをレンダリング */}
+      <HomePageContent />
     </div>);
 });

@@ -1,6 +1,5 @@
-// app/hooks/pageLang.ts (新規作成)
 import { createContext, useContext } from 'hono/jsx';
-import type { Language } from '../types/common'; // 共通の型定義をインポート
+import type { Language } from '../types/common';
 
 type PageLangContextType = {
   lang: Language;

@@ -1,6 +1,6 @@
 import { usePageLang } from '../hooks/pageLang';
 import { translate } from '../utils/i18n';
-import type { LocalizedString } from '../types/common'; // または app/types/common.ts など
+import type { LocalizedString } from '../types/common';
 
 type CommonHeaderProps = {
   titleContent: LocalizedString;

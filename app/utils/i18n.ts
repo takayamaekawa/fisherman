@@ -1,6 +1,6 @@
 import type { Language } from '../types/common';
-import type { LocalizedString } from '../types/common'; // LocalizedString は types/tasks から
-import { fishDictionary } from '../locales/translations'; // ★ JSONからロードされたfishDictionaryをインポート
+import type { LocalizedString } from '../types/common';
+import { fishDictionary } from '../locales/translations';
 
 /**
  * LocalizedString オブジェクトまたは文字列から、指定された言語のテキストを返します。

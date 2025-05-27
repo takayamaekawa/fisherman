@@ -1,8 +1,5 @@
-// app/locales/translations.ts
-import type { LocalizedString } from '../types/common'; // LocalizedString の型定義をインポート
-// (もし ../types/common.ts など別の場所ならパスを修正してください)
+import type { LocalizedString } from '../types/common';
 
-// fishDictionary.json の内容を反映
 export const fishDictionary: Record<string, LocalizedString> = {
   "アジ": {
     "ja": "アジ",
@@ -19,10 +16,9 @@ export const fishDictionary: Record<string, LocalizedString> = {
     "ne": "साल्मन",
     "en": "Salmon"
   }
-  // 他の魚もここに追加できます
+  // 他の魚もここに追加可能
 };
 
-// generalMessages.json の内容を反映
 export const generalMessages: Record<string, LocalizedString> = {
   "homeTitle": {
     "ja": "ホーム",
@@ -85,6 +81,3 @@ export const generalMessages: Record<string, LocalizedString> = {
     "ne": "विषयसूची"
   }
 };
-
-// 必要であれば、他の翻訳関連のユーティリティ関数や型定義もこのファイルに含めるか、
-// 適切にインポート/エクスポートしてください。

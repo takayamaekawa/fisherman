@@ -1,4 +1,4 @@
-import { usePageLang } from '../hooks/pageLang'; // ★ 新しいフックをインポート
+import { usePageLang } from '../hooks/pageLang';
 import type { TaskInfo } from '../types/tasks';
 import TaskItem from '../components/TaskItem';
 

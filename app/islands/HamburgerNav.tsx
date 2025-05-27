@@ -1,5 +1,4 @@
-// app/components/HamburgerNavComponent.tsx (ステップA: ダミーsetLangテスト)
-import { useEffect, useState } from 'hono/jsx'; // useStateも使う可能性があるので入れておく
+import { useEffect, useState } from 'hono/jsx';
 import { Language } from '../types/common';
 
 type ProfileDataForNav = { name: string; };
@@ -31,7 +30,6 @@ const HamburgerNav = ({ profile, lang, setLang }: HamburgerNavProps) => {
     setIsOpen(false); // 言語選択後にメニューを閉じる
   };
 
-  // 元のJSX構造をここに戻していく (TailwindのクラスやSVGも含む)
   return (
     <nav class="bg-gray-800 py-4 relative">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">

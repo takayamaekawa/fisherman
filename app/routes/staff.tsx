@@ -1,8 +1,8 @@
 import { createRoute } from 'honox/factory';
 import staffData from '../../data/staff.json';
 import StaffList from '../islands/StaffList';
-import CommonHeader from '../islands/CommonHeader';         // ★ 共通ヘッダー
-import { generalMessages } from '../locales/translations'; // ★ 翻訳データ
+import CommonHeader from '../islands/CommonHeader';
+import { generalMessages } from '../locales/translations';
 import type { StaffData } from '../types/staff';
 
 const typedStaffData = staffData as StaffData;

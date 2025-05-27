@@ -1,4 +1,3 @@
-// app/hooks/useLang.tsx (useCallback と useMemo を適用した最終版)
 import { createContext, useState, useContext, PropsWithChildren, useEffect, useMemo, useCallback } from 'hono/jsx';
 import { Language } from '../types/common';
 
