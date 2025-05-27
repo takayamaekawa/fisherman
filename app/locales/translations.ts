@@ -26,7 +26,7 @@ export const generalMessages: Record<string, LocalizedString> = {
     "ne": "गृह पृष्ठ"
   },
   "homeDescription": {
-    "ja": "ある魚屋の情報を提供します。",
+    "ja": "あるスーパーの鮮魚コーナーでの情報を提供します。",
     "en": "Providing information from a certain fish market.",
     "ne": "एक निश्चित माछा बजारबाट जानकारी प्रदान गर्दै।"
   },
