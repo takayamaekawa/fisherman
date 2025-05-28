@@ -47,9 +47,11 @@ const HamburgerNav = ({ profile, lang, setLang }: HamburgerNavProps) => {
   };
 
   // ★ nav要素のクラスを変更
-  const navClasses = `bg-gray-800 py-4 fixed top-0 left-0 right-0 z-50 shadow-md transition-transform duration-300 ease-in-out 
-    ${navVisible ? 'transform-none' : '-translate-y-full'}
-    mx-auto max-w-4xl`; // ★ 中央揃えと最大幅を追加 (w-full を削除)
+  // navClasses の bg-gray-800 を置き換えるイメージ
+  const navClasses = `py-4 fixed top-0 left-0 right-0 z-50 shadow-md transition-transform duration-300 ease-in-out 
+  ${navVisible ? 'transform-none' : '-translate-y-full'}
+  mx-auto max-w-4xl 
+  bg-slate-800/90 backdrop-blur-md border-b border-slate-700/50 rounded-b-lg`; // ★変更例 (rounded-b-lgで下側だけ角丸など)
 
   return (
     <nav class={navClasses} style={{ height: navbarActualHeight }}>
