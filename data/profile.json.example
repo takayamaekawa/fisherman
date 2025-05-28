@@ -1,17 +1,17 @@
 {
-  "name": "",
-  "title": "",
+  "name": "Nova Tech",
+  "title": "革新的なソフトウェア開発",
   "og": {
-    "title": "",
-    "description": "",
-    "image": "",
-    "url": ""
+    "title": "Nova Tech Official",
+    "description": "最先端の技術を活用し、効率的なソフトウェアソリューションを提供します。",
+    "image": "https://example.com/og-image.jpg",
+    "url": "https://example.com"
   },
-  "url": "",
+  "url": "https://example.com",
   "social": {
     "github": {
-      "url": ""
-    },
+      "url": "https://github.com/nova-tech"
+    }
   },
-  "copyrighter": ""
+  "copyrighter": "Nova Tech © 2025"
 }

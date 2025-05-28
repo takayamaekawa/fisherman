@@ -1,20 +1,20 @@
 {
   "contact": [
     {
-      "name": "",
+      "name": "Alex Johnson",
       "position": {
-        "ja": "",
-        "ne": "",
-        "en": ""
+        "ja": "ソフトウェアエンジニア",
+        "ne": "Software Engineer",
+        "en": "Software Engineer"
       },
       "specialty": {
-        "ja": "",
-        "ne": "",
-        "en": ""
+        "ja": "バックエンド開発 & システム設計",
+        "ne": "Backend Development & System Architecture",
+        "en": "Backend Development & System Architecture"
       },
       "way": {
-        "tel": "",
-        "email": ""
+        "tel": "+81-90-1234-5678",
+        "email": "alex@example.com"
       }
     }
   ]
