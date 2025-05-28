@@ -1,5 +1,5 @@
 import { createRoute } from 'honox/factory';
-import ContactPageContent from '../islands/ContactPageContent';
+import ContactContent from '../islands/ContactContent';
 import CommonHeader from '../islands/CommonHeader';
 import { generalMessages } from '../locales/translations';
 import contactDataJson from '../../data/contact.json';
@@ -15,7 +15,7 @@ export default createRoute(async (c) => {
           titleContent={generalMessages.contactTitle}
           descriptionContent={generalMessages.contactDescription}
         />
-        <ContactPageContent contactList={typedContactData.contact} />
+        <ContactContent contactList={typedContactData.contact} />
       </div>
     </>
   );

@@ -43,7 +43,7 @@ type ContactPageContentProps = {
   contactList: ContactPerson[];
 };
 
-const ContactPageContent = ({ contactList }: ContactPageContentProps) => {
+const ContactContent = ({ contactList }: ContactPageContentProps) => {
   const { lang } = usePageLang();
   // console.log('[ContactPageContent Island] Rendered. Current lang:', lang);
 
@@ -56,4 +56,4 @@ const ContactPageContent = ({ contactList }: ContactPageContentProps) => {
   );
 };
 
-export default ContactPageContent;
+export default ContactContent;
