@@ -12,7 +12,7 @@ type TableOfContentsProps = {
 
 const TableOfContents = ({ tasks }: TableOfContentsProps) => {
   const { lang } = usePageLang();
-  console.log('[TableOfContents Island] Rendered. Current lang:', lang);
+  // console.log('[TableOfContents Island] Rendered. Current lang:', lang);
 
   if (!tasks || tasks.length === 0) {
     return null; // タスクがない場合は何も表示しない
