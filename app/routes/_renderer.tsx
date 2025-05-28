@@ -18,36 +18,28 @@ export default jsxRenderer(({ children }, c: Context) => {
     { name: "twitter:description", content: profileData.og.description },
     { name: "twitter:image", content: profileData.og.image },
   ];
-
-  // SSR時の初期言語 (ここでは'ja'固定、必要なら動的に設定)
   const ssrInitialLang = 'ja';
-  // 白い色味を完全になくし、ブラー効果だけにしたい場合 -> bg-transparent に変更
-  const glassClasses = 'bg-white/5';
+  // const glassClasses = 'bg-white/5'; // この変数はRootLayoutIsland側に移るイメージ
 
   return (
-    // ★ RootLayoutIslandのuseEffectでクライアントで更新されるが、SSR時にも設定
     <html lang={ssrInitialLang}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{pageTitle}</title>
-        {metaTags.map((tag: any, i: any) => (
-          <meta key={i} {...tag} />
-        ))}
+        {metaTags.map((tag: any, i: any) => (<meta key={i} {...tag} />))}
         <link rel="icon" href="/favicon.ico" />
         <Link href="/app/style.css" rel="stylesheet" />
         <Script src="/app/client.ts" async />
       </head>
-      <body class="font-sans antialiased text-gray-100 bg-gray-900">
-        {/* ★ p-4 を削除 */}
-        <main class="relative overflow-hidden rounded-md shadow-lg mx-auto max-w-4xl">
-          <div class={`relative z-10 backdrop-blur-md p-6 ${glassClasses} rounded-lg border border-white/20`}>
-            <RootLayoutIsland profile={profileData} initialLang={ssrInitialLang}>
-              {children}
-            </RootLayoutIsland>
-          </div>
+      <body class="font-sans antialiased text-gray-100 bg-gray-900"> {/* ページ全体の背景色 */}
+        {/* ★ mainタグから bg-gray-800 を削除し、p-4 はガラスカードの外側の余白として機能 */}
+        <main class="mx-auto max-w-4xl p-4">
+          <RootLayoutIsland profile={profileData} initialLang={ssrInitialLang}>
+            {children}
+          </RootLayoutIsland>
         </main>
       </body>
-    </html >
+    </html>
   );
 });
