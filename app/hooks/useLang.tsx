@@ -19,7 +19,7 @@ export const LangProvider = ({ children }: PropsWithChildren) => {
   }, [lang]);
 
   const updateLang = useCallback((newLang: Language) => {
-    // console.log(`[LangProvider] updateLang CALLED. Attempting to change from "<span class="math-inline">\{lang\}" to "</span>{newLang}"`);
+    // console.log(`[LangProvider] updateLang CALLED. Attempting to change from "${lang}" to "${newLang}"`);
     if (newLang !== lang) {
       setLangState(newLang);
       // console.log(`[LangProvider] Lang SET to "${newLang}". State update initiated.`);

@@ -10,7 +10,7 @@ function RubyText({ text, lang }: { text: string; lang: string }) {
   for (const [jaName, enName] of Object.entries(fishDictionary)) {
     processedText = processedText.replace(
       new RegExp(jaName, 'g'),
-      `<ruby><span class="math-inline">\{jaName\}<rt\></span>{enName}</rt></ruby>`
+      `<ruby>${jaName}<rt>${enName}</rt></ruby>`
     );
   }
 

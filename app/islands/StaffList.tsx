@@ -39,7 +39,7 @@ const StaffList = ({ staffMembers }: StaffListPropsUpdated) => {
     <>
       {staffMembers.map((member) => (
         <StaffItem
-          key={`<span class="math-inline">\{member\.id\}\-</span>{lang}`}
+          key={`${member.id}-${lang}`}
           {...member}
           lang={lang}
         />
