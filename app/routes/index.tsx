@@ -1,5 +1,5 @@
 import { createRoute } from 'honox/factory';
-import HomePageContent from '../islands/HomePageContent';
+import IndexContent from '../islands/IndexContent';
 import CommonHeader from '../islands/CommonHeader';
 import { generalMessages } from '../locales/translations';
 
@@ -12,6 +12,6 @@ export default createRoute(async (c) => {
         titleContent={generalMessages.homeTitle}
         descriptionContent={generalMessages.homeDescription}
       />
-      <HomePageContent />
+      <IndexContent />
     </div>);
 });
