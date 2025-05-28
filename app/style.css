@@ -1,6 +1,4 @@
-
 @import 'tailwindcss' source('../app');
-
 
 html, body {
   min-height: 100vh;
