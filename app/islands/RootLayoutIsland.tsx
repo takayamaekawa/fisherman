@@ -52,7 +52,8 @@ export default function RootLayoutIsland({ children, profile, initialLang = 'ja'
       <PageLangContextProvider value={{ lang }}>
         <div>{children}</div>
       </PageLangContextProvider>
-      <footer class="mt-12 text-center text-gray-400 bg-gray-800 border-t border-gray-700 py-6 shadow-inner">
+      <footer class="mt-12 text-center text-gray-400 py-6 shadow-inner 
+               bg-slate-800/90 backdrop-blur-md border-t border-slate-700/50 rounded-t-lg">
         <p>&copy; {new Date().getFullYear()} {profile.copyrighter || profile.name}. All rights reserved.</p>
       </footer>
     </>
