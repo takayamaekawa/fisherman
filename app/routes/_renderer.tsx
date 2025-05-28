@@ -21,6 +21,8 @@ export default jsxRenderer(({ children }, c: Context) => {
 
   // SSR時の初期言語 (ここでは'ja'固定、必要なら動的に設定)
   const ssrInitialLang = 'ja';
+  // 白い色味を完全になくし、ブラー効果だけにしたい場合 -> bg-transparent に変更
+  const glassClasses = 'bg-white/5';
 
   return (
     // ★ RootLayoutIslandのuseEffectでクライアントで更新されるが、SSR時にも設定
@@ -37,8 +39,9 @@ export default jsxRenderer(({ children }, c: Context) => {
         <Script src="/app/client.ts" async />
       </head>
       <body class="font-sans antialiased text-gray-100 bg-gray-900">
-        <main class="relative overflow-hidden rounded-md shadow-lg mx-auto max-w-4xl p-4">
-          <div class="relative z-10 backdrop-blur-md bg-white/10 p-6 rounded-lg border border-white/20">
+        {/* ★ p-4 を削除 */}
+        <main class="relative overflow-hidden rounded-md shadow-lg mx-auto max-w-4xl">
+          <div class={`relative z-10 backdrop-blur-md p-6 ${glassClasses} rounded-lg border border-white/20`}>
             <RootLayoutIsland profile={profileData} initialLang={ssrInitialLang}>
               {children}
             </RootLayoutIsland>
