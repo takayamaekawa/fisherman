@@ -19,7 +19,14 @@ function TaskItem({ id, title, description, procedure, points, image, lang: item
         <span>{translate(title, itemLang)}</span>
       </h3>
       {/* タスク全体のメイン画像 */}
-      {image && <img src={image} alt={translate(title, itemLang)} class="my-4 rounded-md max-w-sm mx-auto" />}
+      {image && (
+        <img
+          src={image}
+          alt={translate(title, itemLang)}
+          // ★ クラスに w-full と h-auto を追加
+          class="my-4 rounded-md w-full max-w-sm h-auto mx-auto"
+        />
+      )}
       <p class="mt-2 text-gray-300" dangerouslySetInnerHTML={translatedDescription}></p>
 
       <h4 class="text-lg font-medium mt-4">{translate(generalMessages.taskItemProcedureLabel, itemLang)}:</h4>

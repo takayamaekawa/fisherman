@@ -63,7 +63,14 @@ export default function RootLayoutIsland({ children, profile, initialLang = 'ja'
 
             {/* フッターはガラスパネルの一部として表示 */}
             <footer class="mt-12 text-center text-gray-400 py-6 border-t border-slate-600/70"> {/* 境界線の色も調整 */}
-              <p>&copy; {new Date().getFullYear()} {profile.copyrighter || profile.name}. All rights reserved.</p>
+              <p>
+                &copy; {new Date().getFullYear()} {profile.copyrighter || profile.name}.
+                {/* ★ スマートフォン表示 (smブレークポイント未満) でのみ改行 */}
+                <br class="sm:hidden" />
+                {/* デスクトップ表示時にスペースが入るように */}
+                {' '}
+                All rights reserved.
+              </p>
             </footer>
           </div>
         </div>
