@@ -2,9 +2,9 @@
 import { useState, useEffect, PropsWithChildren } from 'hono/jsx';
 import HamburgerNav from './HamburgerNav';
 import { Language } from '../types/common';
+import type { ProfileData } from '../types/profile';
 import { PageLangContextProvider } from '../hooks/pageLang';
 
-type ProfileData = { name: string; title?: string; copyrighter: string; };
 type RootLayoutIslandProps = PropsWithChildren<{
   profile: ProfileData;
   initialLang?: Language;
