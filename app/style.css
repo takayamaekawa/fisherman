@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 @import 'tailwindcss' source('../app');
 
 html, body {
@@ -19,9 +20,6 @@ body {
   color: #f3f4f6; /* text-gray-100 相当 */
 }
 
-/* main 要素自体には特別な背景やパターンは設定しない */
-/* main { } */ /* Tailwindのクラス mx-auto max-w-4xl p-4 が適用される */
-
 /* RootLayoutIsland内の .island-content-card の ::before に魚パターンを設定 */
 .island-content-card::before {
   content: "";
@@ -34,6 +32,7 @@ body {
   border-radius: inherit; /* 親の .island-content-card の角丸を継承 (例: rounded-xl) */
   opacity: 1.0; /* ★ パターンの濃さを調整 (0.0 transparent ~ 1.0 opaque) */
 }
+
 html[lang="ja"] body {
   font-family: 'Kosugi Maru', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
