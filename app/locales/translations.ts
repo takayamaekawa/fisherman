@@ -89,5 +89,9 @@ export const generalMessages: Record<string, LocalizedString> = {
     "ja": "ポイント",
     "en": "Points",
     "ne": "बिन्दु"
-  }
+  },
+  nextButtonText: { ja: "次に進む", en: "Next", ne: "अर्को" },
+  nextPagePrefix: { ja: "次は:", en: "Next:", ne: "अब:" },
+  prevButtonText: { ja: "前に戻る", en: "Previous", ne: "अघिल्लो" },
+  prevPagePrefix: { ja: "前は:", en: "Previous:", ne: "पहिले:" },
 };

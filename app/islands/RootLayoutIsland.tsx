@@ -3,17 +3,21 @@ import { useState, useEffect, PropsWithChildren } from 'hono/jsx';
 import HamburgerNav from './HamburgerNav';
 import { Language } from '../types/common';
 import type { ProfileData } from '../types/profile';
+import type { SiteConfig } from '../types/siteConfig';
 import { PageLangContextProvider } from '../hooks/pageLang';
+import PrevNextNavigation from './PrevNextNavigation';
 
 type RootLayoutIslandProps = PropsWithChildren<{
   profile: ProfileData;
   initialLang?: Language;
+  currentPath: string;
+  siteConfig: SiteConfig;
 }>;
 
 const LS_LANG_KEY = 'fisherman_lang';
 const NAVBAR_TOP_PADDING_CLASS = 'pt-[3.5rem]'; // Navbarの高さに合わせたパディング (実際の高さに合わせる)
 
-export default function RootLayoutIsland({ children, profile, initialLang = 'ja' }: RootLayoutIslandProps) {
+export default function RootLayoutIsland({ children, profile, initialLang = 'ja', currentPath, siteConfig }: RootLayoutIslandProps) {
   const [lang, setLangOriginal] = useState<Language>(() => {
     if (typeof localStorage !== 'undefined') {
       const storedLang = localStorage.getItem(LS_LANG_KEY);
@@ -42,6 +46,8 @@ export default function RootLayoutIsland({ children, profile, initialLang = 'ja'
   // const glassEffectClasses = "backdrop-blur-md bg-black/20 border border-white/10"; // 例2: 黒の20%不透明
   const glassEffectClasses = "backdrop-blur-md bg-white/10 border border-white/20";
 
+  const shouldShowPrevNext = siteConfig.showPrevNextOnHomePage ? true : currentPath !== '/';
+
   return (
     <>
       <HamburgerNav
@@ -59,6 +65,8 @@ export default function RootLayoutIsland({ children, profile, initialLang = 'ja'
           <div class={`content-on-glass relative z-[1] p-6 ${glassEffectClasses} rounded-xl`}> {/* rounded-xlで親と合わせる */}
             <PageLangContextProvider value={{ lang }}>
               <div>{children}</div>
+              {/* ★ JSON設定と現在のパスに基づいて表示を制御 */}
+              {shouldShowPrevNext && <PrevNextNavigation currentPath={currentPath} />}
             </PageLangContextProvider>
 
             {/* フッターはガラスパネルの一部として表示 */}

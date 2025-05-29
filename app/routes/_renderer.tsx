@@ -2,6 +2,7 @@ import { jsxRenderer } from 'hono/jsx-renderer';
 import type { Context } from 'hono';
 import RootLayoutIsland from '../islands/RootLayoutIsland';
 import profileData from '../../data/profile.json';
+import siteConfig from '../../data/siteConfig.json';
 import { Link, Script } from 'honox/server';
 
 export default jsxRenderer(({ children }, c: Context) => {
@@ -35,7 +36,12 @@ export default jsxRenderer(({ children }, c: Context) => {
       <body class="font-sans antialiased text-gray-100 bg-gray-900"> {/* ページ全体の背景色 */}
         {/* ★ mainタグから bg-gray-800 を削除し、p-4 はガラスカードの外側の余白として機能 */}
         <main class="mx-auto max-w-4xl p-4">
-          <RootLayoutIsland profile={profileData} initialLang={ssrInitialLang}>
+          <RootLayoutIsland
+            profile={profileData}
+            initialLang={ssrInitialLang}
+            currentPath={c.req.path}
+            siteConfig={siteConfig}
+          >
             {children}
           </RootLayoutIsland>
         </main>
