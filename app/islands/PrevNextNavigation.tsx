@@ -48,7 +48,7 @@ const PrevNextNavigation = ({ currentPath }: PrevNextNavigationProps) => {
   useEffect(() => {
     setPreviousPageInfo(getPreviousPage(currentPath));
     setNextPageInfo(getNextPage(currentPath));
-    console.log(`[PrevNextNavigation] Path updated: ${currentPath}, Prev: ${getPreviousPage(currentPath)?.path}, Next: ${getNextPage(currentPath)?.path}`);
+    // console.log(`[PrevNextNavigation] Path updated: ${currentPath}, Prev: ${getPreviousPage(currentPath)?.path}, Next: ${getNextPage(currentPath)?.path}`);
   }, [currentPath]);
 
   // ★ ホームページの場合は RootLayoutIsland側でレンダリングしないようにする
