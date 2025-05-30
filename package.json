@@ -4,14 +4,14 @@
   "description": "Composed a website for part-timers at one of the markets. ",
   "homepage": "https://fisherman.work",
   "bugs": {
-    "url": "https://github.com/verazza/fisherman/issues"
+    "url": "https://github.com/takayamaekawa/fisherman/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/verazza/fisherman.git"
+    "url": "git+https://github.com/takayamaekawa/fisherman.git"
   },
   "license": "MIT",
-  "author": "verazza",
+  "author": "Takaya Maekawa",
   "type": "module",
   "scripts": {
     "dev": "vite",
