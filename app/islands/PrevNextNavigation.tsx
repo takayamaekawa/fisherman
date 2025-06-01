@@ -61,7 +61,7 @@ const PrevNextNavigation = ({ currentPath }: PrevNextNavigationProps) => {
 
   // 表示するナビゲーションがない場合は何もレンダリングしない
   if (!previousPageInfo && !nextPageInfo) {
-    console.log('[PrevNextNavigation] No prev or next page info, rendering null.');
+    // console.log('[PrevNextNavigation] No prev or next page info, rendering null.');
     return null;
   }
 

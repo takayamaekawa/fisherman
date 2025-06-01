@@ -6,6 +6,7 @@ export type StaffMember = {
   position: LocalizedString;
   specialty: LocalizedString;
   message: LocalizedString;
+  hobby?: LocalizedString;
   image?: string;
 };
 
