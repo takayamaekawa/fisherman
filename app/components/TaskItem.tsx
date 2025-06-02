@@ -11,6 +11,7 @@ function TaskItem({ id, title, description, procedure, points, image, lang: item
   // console.log(`[TaskItem: ${translate(title, itemLang)}] Rendered. Current lang:`, itemLang);
 
   const translatedDescription = { __html: translate(description, itemLang) };
+  let stepCounter = 0; // ★ ステップアイテム専用のカウンター
 
   return (
     <article id={id} class="mt-12 space-y-4 group relative pt-4 border-t border-gray-700">
@@ -34,11 +35,12 @@ function TaskItem({ id, title, description, procedure, points, image, lang: item
       <div class="ml-4 space-y-2">
         {procedure.map((item: ProcedureItem, index: number) => {
           if (item.type === 'step') {
+            stepCounter++;
             // 型ガードを使って item が StepItem であることを TypeScript に伝える
             const stepItem = item as StepItem;
             return (
               <div key={`${id}-step-${index}`} class="flex items-start">
-                <span class="mr-2 text-gray-400">{index + 1}.</span> {/* 番号付け */}
+                <span class="mr-2 text-gray-400">{/* {index + 1} */}{stepCounter}.</span> {/* 番号付け */}
                 <div dangerouslySetInnerHTML={{ __html: translate(stepItem.text, itemLang) }}></div>
               </div>
             );
@@ -46,7 +48,7 @@ function TaskItem({ id, title, description, procedure, points, image, lang: item
             // 型ガードを使って item が ImageItem であることを TypeScript に伝える
             const imageItem = item as ImageItem;
             return (
-              <figure key={`${id}-image-${index}`} class="my-4 text-center">
+              <figure key={`${id}-image-${index}`} class="my-3 text-center"> {/* myを少し調整 */}
                 <img
                   src={imageItem.path}
                   alt={translate(imageItem.alt, itemLang)}
