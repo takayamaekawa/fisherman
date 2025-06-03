@@ -12,34 +12,36 @@ type ContactPersonItemProps = ContactPerson & {
 function ContactPersonItem({ name, position, specialty, way, lang }: ContactPersonItemProps) {
   return (
     <>
-      <h3 class="text-2xl font-semibold text-gray-100">{renderName(name, lang)}</h3>
-      <p class="text-gray-400 mt-1">{translate(position, lang)}</p>
-      <p class="text-gray-300 mt-2">{translate(specialty, lang)}</p>
+      <div class="bg-gray-700 p-6 rounded-lg shadow-lg mb-6 text-left">
+        <h3 class="text-2xl font-semibold text-gray-100">{renderName(name, lang)}</h3>
+        <p class="text-gray-400 mt-1">{translate(position, lang)}</p>
+        <p class="text-gray-300 mt-2">{translate(specialty, lang)}</p>
 
-      {/* TEL */}
-      {way.tel && (
-        <p class="mt-4">
-          <strong class="text-gray-200">{translate(generalMessages.telLabel, lang)}</strong>
-          <br class="sm:hidden" />
-          <a href={`tel:${way.tel.replace(/-/g, '')}`} class="ml-2 text-blue-400 hover:text-blue-300 break-all"> {/* break-allを追加しても良い */}
-            {way.tel}
-          </a>
-        </p>
-      )}
-      {/* Email */}
-      {way.email && (
-        <p class="mt-2">
-          <strong class="text-gray-200">{translate(generalMessages.emailLabel, lang)}</strong>
-          <br class="sm:hidden" />
-          <a
-            href={`mailto:${way.email}`}
-            // ★ break-all クラスを追加して、長いメールアドレスが折り返すようにする
-            class="ml-2 text-blue-400 hover:text-blue-300 break-all"
-          >
-            {way.email}
-          </a>
-        </p>
-      )}
+        {/* TEL */}
+        {way.tel && (
+          <p class="mt-4">
+            <strong class="text-gray-200">{translate(generalMessages.telLabel, lang)}</strong>
+            <br class="sm:hidden" />
+            <a href={`tel:${way.tel.replace(/-/g, '')}`} class="ml-2 text-blue-400 hover:text-blue-300 break-all"> {/* break-allを追加しても良い */}
+              {way.tel}
+            </a>
+          </p>
+        )}
+        {/* Email */}
+        {way.email && (
+          <p class="mt-2">
+            <strong class="text-gray-200">{translate(generalMessages.emailLabel, lang)}</strong>
+            <br class="sm:hidden" />
+            <a
+              href={`mailto:${way.email}`}
+              // ★ break-all クラスを追加して、長いメールアドレスが折り返すようにする
+              class="ml-2 text-blue-400 hover:text-blue-300 break-all"
+            >
+              {way.email}
+            </a>
+          </p>
+        )}
+      </div>
     </>
   );
 }
