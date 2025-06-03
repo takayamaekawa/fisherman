@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
-@import 'tailwindcss' source('../app');
+@import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap");
+@import "tailwindcss" source("../app");
 
-html, body {
+html,
+body {
   min-height: 100vh;
   width: 100%;
   margin: 0; /* 基本的なリセット */
@@ -14,7 +15,7 @@ html {
 
 body {
   background-color: #111827; /* Tailwindの bg-gray-900 相当 */
-  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-family: "Noto Sans Devanagari", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #f3f4f6; /* text-gray-100 相当 */
@@ -25,24 +26,64 @@ body {
   content: "";
   position: absolute;
   inset: 0; /* 親(.island-content-card)いっぱいに広がる */
-  background-image: url('/backgrounds.png'); /* ★指定の画像 */
+  background-image: url("/backgrounds.png"); /* ★指定の画像 */
   background-repeat: repeat;
   background-size: 300px 300px; /* パターンサイズはお好みで調整 */
   z-index: 0; /* .content-on-glass のコンテンツの背後に */
   border-radius: inherit; /* 親の .island-content-card の角丸を継承 (例: rounded-xl) */
-  opacity: 1.0; /* ★ パターンの濃さを調整 (0.0 transparent ~ 1.0 opaque) */
+  opacity: 1; /* ★ パターンの濃さを調整 (0.0 transparent ~ 1.0 opaque) */
 }
 
 html[lang="ja"] body {
-  font-family: 'Kosugi Maru', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:
+    "Kosugi Maru",
+    "Noto Sans Devanagari",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 html[lang="ne"] body {
-  font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:
+    "Noto Sans Devanagari",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 nav {
-  font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  font-family:
+    "Noto Sans Devanagari",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji" !important;
   font-weight: 600 !important;
 }
 
@@ -69,3 +110,81 @@ a:hover {
   border-bottom: none !important;
   padding-bottom: 0 !important;
 }
+
+/* カスタム下線と文字色のためのクラス */
+
+/* 青色の下線と文字 */
+.custom-text-blue {
+  color: #3b82f6; /* Tailwind の text-blue-500 相当 (例) */
+}
+.custom-underline-blue {
+  text-decoration: underline;
+  text-decoration-color: #3b82f6; /* Tailwind の decoration-blue-500 相当 (例) */
+  text-decoration-thickness: 2px; /* 下線の太さ (任意) */
+  /* 必要であれば、下線のオフセットなども指定できます */
+  /* text-underline-offset: 2px; */
+}
+
+/* 黄色の下線と文字 */
+.custom-text-yellow {
+  color: #eab308; /* Tailwind の text-yellow-500 相当 (例) */
+}
+.custom-underline-yellow {
+  text-decoration: underline;
+  text-decoration-color: #eab308;
+  text-decoration-thickness: 2px;
+}
+
+/* 緑色の下線と文字 */
+.custom-text-green {
+  color: #22c55e; /* Tailwind の text-green-500 相当 (例) */
+}
+.custom-underline-green {
+  text-decoration: underline;
+  text-decoration-color: #22c55e;
+  text-decoration-thickness: 2px;
+}
+
+/* 赤色の下線と文字 */
+.custom-text-red {
+  color: #ef4444; /* Tailwind の text-red-500 相当 (例) */
+}
+.custom-underline-red {
+  text-decoration: underline;
+  text-decoration-color: #ef4444;
+  text-decoration-thickness: 2px;
+}
+
+/* 文字色はデフォルトで下線だけ色を付けたい場合 */
+.custom-underline-only-blue {
+  text-decoration: underline;
+  text-decoration-color: #3b82f6;
+  text-decoration-thickness: 2px;
+}
+.custom-underline-only-yellow {
+  text-decoration: underline;
+  text-decoration-color: #eab308;
+  text-decoration-thickness: 2px;
+}
+/* ... 他の色も同様に ... */
+
+/* 既存のunderlineクラスとの競合を避けるため、より具体的にするのも良いでしょう */
+/* 例:
+.text-highlight.blue { color: #3b82f6; }
+.underline-highlight.blue { text-decoration-color: #3b82f6; }
+*/
+
+/* ... (既存の a タグのスタイルなど) ... */
+
+/*
+  重要: 既存のグローバルな `a` タグのスタイルや `underline` クラスのスタイルと
+  競合しないように、クラス名やセレクタの具体性を調整する必要があるかもしれません。
+  Tailwind の `underline` クラスも `text-decoration: underline;` を適用するため、
+  もし Tailwind の `underline` を使いつつ色だけ変えたい場合は、
+  `decoration-{color}-{shade}` ユーティリティがJITで生成されるように
+  `safelist` を使うのが本来の方法です。
+
+  しかし、今回は app/style.css で制御する方針なので、
+  Tailwind の `underline` とは独立したカスタムクラスを作るか、
+  Tailwind のクラスが生成されない前提で、必要なスタイルをすべてカスタムクラスで定義します。
+*/
