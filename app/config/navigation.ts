@@ -1,42 +1,36 @@
-import { generalMessages } from '../locales/translations'; // generalMessagesのキーを参照するため
+import type { LocalizedString } from '../types/common';
+import type { FullRouteInfo } from '../types/routes';
 
-// ナビゲーションアイテムの型
 export type NavItem = {
-  path: string; // 例: "/", "/about", "/projects"
-  // generalMessages の中の、このページのタイトルに対応するキー名
-  titleKey: keyof typeof generalMessages;
+  path: string;
+  name: string;
+  title: LocalizedString;
 };
 
-// サイトの主要なページの順序を定義
-export const mainNavigationSequence: NavItem[] = [
-  { path: '/', titleKey: 'homeTitle' },
-  { path: '/staff', titleKey: 'staffTitle' },
-  { path: '/tasks', titleKey: 'tasksTitle' },
-  { path: '/contact', titleKey: 'contactTitle' },
-  // 他の主要なページがあれば、順番に追加
-];
+// ★ mainNavigationSequence は NavItem の配列を返す関数
+export const generateNavigationSequence = (routesData: { routes: FullRouteInfo[] }): NavItem[] => {
+  return routesData.routes.map(route => ({
+    path: route.path,
+    name: route.name,
+    title: route.title,
+  }));
+};
 
-export function getNextPage(currentPath: string): NavItem | null {
-  const currentIndex = mainNavigationSequence.findIndex(item => item.path === currentPath);
-  if (currentIndex !== -1 && currentIndex < mainNavigationSequence.length - 1) {
-    return mainNavigationSequence[currentIndex + 1];
+// ★ getNextPage と getPreviousPage は routesData を引数に取り、内部でナビゲーションシーケンスを生成して使う
+export function getNextPage(currentPath: string, routesData: { routes: FullRouteInfo[] }): NavItem | null {
+  const sequence = generateNavigationSequence(routesData); // ★ 関数を呼び出してシーケンスを取得
+  const currentIndex = sequence.findIndex(item => item.path === currentPath);
+  if (currentIndex !== -1 && currentIndex < sequence.length - 1) {
+    return sequence[currentIndex + 1];
   }
-  // 最後のページならホームページに戻す場合 (オプション)
-  // if (currentIndex === mainNavigationSequence.length - 1 && mainNavigationSequence.length > 1) {
-  //   return mainNavigationSequence[0];
-  // }
   return null;
 }
 
-// ★「前のページ」を取得する関数を追加
-export function getPreviousPage(currentPath: string): NavItem | null {
-  const currentIndex = mainNavigationSequence.findIndex(item => item.path === currentPath);
-  if (currentIndex !== -1 && currentIndex > 0) { // 最初のページでなければ前のページが存在
-    return mainNavigationSequence[currentIndex - 1];
+export function getPreviousPage(currentPath: string, routesData: { routes: FullRouteInfo[] }): NavItem | null {
+  const sequence = generateNavigationSequence(routesData); // ★ 関数を呼び出してシーケンスを取得
+  const currentIndex = sequence.findIndex(item => item.path === currentPath);
+  if (currentIndex !== -1 && currentIndex > 0) {
+    return sequence[currentIndex - 1];
   }
-  // 最初のページなら一番最後のページに戻す場合 (オプション)
-  // if (currentIndex === 0 && mainNavigationSequence.length > 1) {
-  //   return mainNavigationSequence[mainNavigationSequence.length - 1];
-  // }
   return null;
 }

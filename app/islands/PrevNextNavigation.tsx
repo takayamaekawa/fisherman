@@ -3,6 +3,7 @@ import { usePageLang } from '../hooks/pageLang';
 import { translate } from '../utils/i18n';
 import { generalMessages } from '../locales/translations';
 import { getNextPage, getPreviousPage, type NavItem } from '../config/navigation';
+import type { FullRouteInfo } from '../types/routes';
 
 // ★★★ ArrowIcon ヘルパーコンポーネントを定義 ★★★
 type ArrowIconProps = {
@@ -36,20 +37,21 @@ const ArrowIcon = ({ direction, className = '' }: ArrowIconProps) => {
 
 type PrevNextNavigationProps = {
   currentPath: string;
+  routesData: { routes: FullRouteInfo[] }; // ★ routesData を props として追加
 };
 
-const PrevNextNavigation = ({ currentPath }: PrevNextNavigationProps) => {
+const PrevNextNavigation = ({ currentPath, routesData }: PrevNextNavigationProps) => {
   const { lang } = usePageLang();
   // ★ useStateの初期値でページ情報を設定
-  const [previousPageInfo, setPreviousPageInfo] = useState<NavItem | null>(() => getPreviousPage(currentPath));
-  const [nextPageInfo, setNextPageInfo] = useState<NavItem | null>(() => getNextPage(currentPath));
+  const [previousPageInfo, setPreviousPageInfo] = useState<NavItem | null>(() => getPreviousPage(currentPath, routesData));
+  const [nextPageInfo, setNextPageInfo] = useState<NavItem | null>(() => getNextPage(currentPath, routesData));
 
   // ★ currentPath が変更された場合（SPA的な遷移があれば）にページ情報を更新
   useEffect(() => {
-    setPreviousPageInfo(getPreviousPage(currentPath));
-    setNextPageInfo(getNextPage(currentPath));
+    setPreviousPageInfo(getPreviousPage(currentPath, routesData));
+    setNextPageInfo(getNextPage(currentPath, routesData));
     // console.log(`[PrevNextNavigation] Path updated: ${currentPath}, Prev: ${getPreviousPage(currentPath)?.path}, Next: ${getNextPage(currentPath)?.path}`);
-  }, [currentPath]);
+  }, [currentPath, routesData]);
 
   // ★ ホームページの場合は RootLayoutIsland側でレンダリングしないようにする
   //    このコンポーネント自体は、渡されたcurrentPathに基づいて常に prev/next を計算する
@@ -65,14 +67,8 @@ const PrevNextNavigation = ({ currentPath }: PrevNextNavigationProps) => {
     return null;
   }
 
-  const prevPageTitle = previousPageInfo && generalMessages[previousPageInfo.titleKey]
-    ? translate(generalMessages[previousPageInfo.titleKey], lang)
-    : previousPageInfo?.titleKey; // フォールバック
-
-  const nextPageTitle = nextPageInfo && generalMessages[nextPageInfo.titleKey]
-    ? translate(generalMessages[nextPageInfo.titleKey], lang)
-    : nextPageInfo?.titleKey; // フォールバック
-
+  const prevPageTitle = previousPageInfo ? translate(previousPageInfo.title, lang) : null;
+  const nextPageTitle = nextPageInfo ? translate(nextPageInfo.title, lang) : null;
   return (
     <div class="mt-10 mb-8 py-5 px-4 sm:px-6 bg-slate-800/70 border border-slate-700/60 rounded-lg shadow-xl flex flex-col sm:flex-row justify-between items-stretch gap-4">
       {/* Previous Page Link Area */}

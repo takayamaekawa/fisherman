@@ -11,7 +11,7 @@ type ContactPersonItemProps = ContactPerson & {
 
 function ContactPersonItem({ name, position, specialty, way, lang }: ContactPersonItemProps) {
   return (
-    <div class="bg-gray-700 p-6 rounded-lg shadow-lg mb-6 text-left">
+    <>
       <h3 class="text-2xl font-semibold text-gray-100">{renderName(name, lang)}</h3>
       <p class="text-gray-400 mt-1">{translate(position, lang)}</p>
       <p class="text-gray-300 mt-2">{translate(specialty, lang)}</p>
@@ -40,7 +40,7 @@ function ContactPersonItem({ name, position, specialty, way, lang }: ContactPers
           </a>
         </p>
       )}
-    </div>
+    </>
   );
 }
 

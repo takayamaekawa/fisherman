@@ -1,0 +1,100 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "name": "dashboard",
+      "title": {
+        "ja": "ダッシュボード",
+        "en": "Dashboard"
+      },
+      "description": {
+        "ja": "ようこそサンプルダッシュボードへ！",
+        "en": "Welcome to the sample dashboard!"
+      },
+      "description2": {
+        "ja": "シンプルなUIで直感的に操作可能",
+        "en": "Intuitive and simple UI"
+      },
+      "description3": {
+        "ja": "全ての機能がここから利用できます",
+        "en": "All features are accessible from here"
+      },
+      "sitemap": {
+        "priority": "1.0",
+        "changefreq": "daily"
+      }
+    },
+    {
+      "path": "/profile",
+      "name": "profile",
+      "title": {
+        "ja": "プロフィール",
+        "en": "Profile"
+      },
+      "description": {
+        "ja": "あなたのプロフィール情報を確認・編集できます。",
+        "en": "Check and edit your profile information."
+      },
+      "sitemap": {
+        "priority": "0.8",
+        "changefreq": "weekly"
+      }
+    },
+    {
+      "path": "/reports",
+      "name": "reports",
+      "title": {
+        "ja": "レポート",
+        "en": "Reports"
+      },
+      "description": {
+        "ja": "各種レポートを閲覧できます。",
+        "en": "View various reports here."
+      },
+      "sitemap": {
+        "priority": "0.7",
+        "changefreq": "monthly"
+      }
+    },
+    {
+      "path": "/tools",
+      "name": "tools",
+      "title": {
+        "ja": "ツール",
+        "en": "Tools"
+      },
+      "description": {
+        "ja": "便利なツール一覧",
+        "en": "List of useful tools"
+      },
+      "sitemap": {
+        "priority": "0.6",
+        "changefreq": "monthly"
+      }
+    },
+    {
+      "path": "/support",
+      "name": "support",
+      "title": {
+        "ja": "サポート",
+        "en": "Support"
+      },
+      "description": {
+        "ja": "お問い合わせはこちらから。",
+        "en": "Contact support here."
+      },
+      "sitemap": {
+        "priority": "0.5",
+        "changefreq": "monthly"
+      }
+    }
+  ],
+  "sitemapIndexFiles": [
+    {
+      "loc": "/sitemap-sample.xml"
+    },
+    {
+      "loc": "/reports/sitemap.xml"
+    }
+  ]
+}
