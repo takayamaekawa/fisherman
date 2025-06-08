@@ -16,7 +16,7 @@ function TaskItem({ id, title, description, procedure, points, image, lang: item
   return (
     <article id={id} class="mt-12 space-y-4 group relative pt-4 border-t border-gray-700">
       <h3 class="text-2xl font-semibold flex items-center">
-        <a href={`#${id}`} class="mr-2 text-xl text-gray-500 hover:text-blue-400 no-underline">🔗</a>
+        <a href={`#${id}`} class="mr-2 text-xl text-gray-500 hover:text-blue-400">🔗</a>
         <span>{translate(title, itemLang)}</span>
       </h3>
       {/* タスク全体のメイン画像 */}

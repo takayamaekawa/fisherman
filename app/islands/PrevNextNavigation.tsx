@@ -75,7 +75,7 @@ const PrevNextNavigation = ({ currentPath, routesData }: PrevNextNavigationProps
       {previousPageInfo ? (
         <a
           href={previousPageInfo.path}
-          class="group flex-1 flex items-center p-3 sm:p-4 rounded-md hover:bg-slate-700/80 transition-colors duration-150 text-gray-300 hover:text-white no-underline"
+          class="group flex-1 flex items-center p-3 sm:p-4 rounded-md hover:bg-slate-700/80 transition-colors duration-150 text-gray-300 hover:text-white"
         >
           {/* ★ ArrowIcon コンポーネントを使用 */}
           <ArrowIcon direction="left" className="mr-2 sm:mr-3 text-gray-400 group-hover:text-white transition-colors" />
@@ -98,7 +98,7 @@ const PrevNextNavigation = ({ currentPath, routesData }: PrevNextNavigationProps
       {nextPageInfo ? (
         <a
           href={nextPageInfo.path}
-          class="group flex-1 flex items-center justify-end p-3 sm:p-4 rounded-md hover:bg-slate-700/80 transition-colors duration-150 text-gray-300 hover:text-white no-underline"
+          class="group flex-1 flex items-center justify-end p-3 sm:p-4 rounded-md hover:bg-slate-700/80 transition-colors duration-150 text-gray-300 hover:text-white"
         >
           <div class="text-right">
             <span class="text-xs text-gray-400 block group-hover:text-gray-200 transition-colors">

@@ -19,7 +19,7 @@ const IndexContent = ({ routesData }: IndexContentProps) => {
       {filteredRoutes.map((route) => (
         <a
           href={route.path}
-          class="text-blue-400 underline hover:text-blue-300 py-1 px-2 basis-[45%] md:basis-auto text-center"
+          class="text-blue-400 hover:text-blue-300 py-1 px-2 basis-[45%] md:basis-auto text-center text-link"
           key={route.path}
         >
           {translate(route.title, lang)}

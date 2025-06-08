@@ -95,20 +95,14 @@ nav {
   padding-right: 1rem;
 }
 
-a {
+a.text-link {
   text-decoration: none;
   border-bottom: 2px solid white;
   padding-bottom: 2px;
 }
 
-a:hover {
+a.text-link:hover {
   border-bottom-color: green;
-}
-
-.no-underline {
-  text-decoration: none !important;
-  border-bottom: none !important;
-  padding-bottom: 0 !important;
 }
 
 /* カスタム下線と文字色のためのクラス */
