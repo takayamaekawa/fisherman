@@ -8,10 +8,5 @@
     "url": "https://example.com"
   },
   "url": "https://example.com",
-  "social": {
-    "github": {
-      "url": "https://github.com/nova-tech"
-    }
-  },
   "copyrighter": "Nova Tech © 2025"
 }
