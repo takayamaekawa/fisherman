@@ -1,16 +1,22 @@
-import type { LocalizedString } from './common'; // または common.ts
+import type { LocalizedString } from './common';
 import type { NameRuby } from './common';
 
-export type ContactWay = { // ★ wayオブジェクトの型
+export type ContactWay = {
   tel?: string;
   email?: string;
 };
+
+export type SocialLink = {
+  label: LocalizedString;
+  url: string;
+}
 
 export type ContactPerson = {
   name: NameRuby;
   position: LocalizedString;
   specialty: LocalizedString;
-  way: ContactWay; // ★ wayオブジェクトを使用
+  way: ContactWay;
+  social?: SocialLink[];
 };
 
 export type ContactData = {

@@ -15,7 +15,17 @@
       "way": {
         "tel": "+81-90-1234-5678",
         "email": "alex@example.com"
-      }
+      },
+      "social": [
+        {
+          "label": {
+            "ja": "私について",
+            "ne": "मेरो बारेमा",
+            "en": "About me"
+          },
+          "url": "https://alex.dev"
+        }
+      ]
     }
   ]
 }
